@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void calculateCartons(int bottles) {
+    int xl = bottles / 48;
+    bottles %= 48;
+    
+    int large = bottles / 24;
+    bottles %= 24;
+    
+    int medium = bottles / 12;
+    bottles %= 12;
+    
+    int small = bottles / 6;
+    bottles %= 6;
+
+    if (bottles > 0) {
+        small++;
+    }
+
+    printf("XL Cartons: %d\n", xl);
+    printf("Large Cartons: %d\n", large);
+    printf("Medium Cartons: %d\n", medium);
+    printf("Small Cartons: %d\n", small);
+}
+
+int main() {
+    int bottles;
+    printf("Enter the number of bottles to be shipped: ");
+    scanf("%d", &bottles);
+    calculateCartons(bottles);
+    return 0;
+}
